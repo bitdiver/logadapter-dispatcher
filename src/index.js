@@ -7,7 +7,7 @@ let logAdapter
 /**
  * returns the logAdapter
  */
-export function getLogAdapter(opts) {
+function getLogAdapter(opts) {
   if (logAdapter === undefined) {
     logAdapter = new LogAdapterDispatcher(opts)
   }

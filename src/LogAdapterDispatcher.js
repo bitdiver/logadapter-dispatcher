@@ -1,5 +1,3 @@
-'use strict'
-
 export default class LogAdapterDispatcher {
   constructor(opts = {}) {
     this.logAdapterList = opts.logAdapterList
