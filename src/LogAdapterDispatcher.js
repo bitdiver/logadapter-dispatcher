@@ -1,6 +1,6 @@
 'use strict'
 
-export class LogAdapterDispatcher {
+export default class LogAdapterDispatcher {
   constructor(opts = {}) {
     this.logAdapterList = opts.logAdapterList
   }
@@ -27,17 +27,4 @@ export class LogAdapterDispatcher {
       }
     }
   }
-}
-
-// Stores the logger instance
-let logAdapter
-
-/**
- * returns the logAdapter
- */
-export function getLogAdapter(opts) {
-  if (logAdapter === undefined) {
-    logAdapter = new LogAdapterDispatcher(opts)
-  }
-  return logAdapter
 }
