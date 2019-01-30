@@ -1,6 +1,5 @@
 import LogAdapterDispatcher from './LogAdapterDispatcher'
 
-
 // Stores the logger instance
 let logAdapter
 
@@ -13,6 +12,5 @@ function getLogAdapter(opts) {
   }
   return logAdapter
 }
-
 
 export { getLogAdapter, LogAdapterDispatcher }
