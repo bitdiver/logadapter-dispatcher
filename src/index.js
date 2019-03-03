@@ -6,11 +6,11 @@ let logAdapter
 /**
  * returns the logAdapter
  */
-function getLogAdapter(opts) {
+function getLogAdapterDispatcher(opts) {
   if (logAdapter === undefined) {
     logAdapter = new LogAdapterDispatcher(opts)
   }
   return logAdapter
 }
 
-export { getLogAdapter, LogAdapterDispatcher }
+export { getLogAdapterDispatcher, LogAdapterDispatcher }
