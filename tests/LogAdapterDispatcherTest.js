@@ -1,7 +1,7 @@
-import { LogAdapterDispatcher, getLogAdapter } from '../lib/index'
+import { LogAdapterDispatcher, getLogAdapterDispatcher } from '../lib/index'
 
 test('create a new LogAdapterDispatcher', async done => {
-  const logAdapter = getLogAdapter()
+  const logAdapter = getLogAdapterDispatcher()
   expect(logAdapter).not.toBeNull()
   logAdapter.reset()
   done()
