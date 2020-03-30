@@ -7,7 +7,7 @@ export default class LogAdapterDispatcher {
       const promisses = []
       for (const logger of this.logAdapterList) {
         promisses.push(
-          logger.log(logMessage).catch(err => {
+          logger.log(logMessage).catch((err) => {
             // eslint-disable-next-line no-console
             console.log(err)
           })

@@ -1,6 +1,6 @@
-import { LogAdapterDispatcher, getLogAdapterDispatcher } from '../lib/index'
+import { LogAdapterDispatcher, getLogAdapterDispatcher } from '../src/index'
 
-test('create a new LogAdapterDispatcher', async done => {
+test('create a new LogAdapterDispatcher', async (done) => {
   const logAdapter = getLogAdapterDispatcher()
   expect(logAdapter).not.toBeNull()
   logAdapter.reset()
@@ -10,7 +10,7 @@ test('create a new LogAdapterDispatcher', async done => {
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter set loglevel', async done => {
+test('Logadapter set loglevel', async (done) => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -37,7 +37,7 @@ test('Logadapter set loglevel', async done => {
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter reset', async done => {
+test('Logadapter reset', async (done) => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -57,7 +57,7 @@ test('Logadapter reset', async done => {
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter reset', async done => {
+test('Logadapter reset', async (done) => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -76,7 +76,7 @@ test('Logadapter reset', async done => {
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter with error', async done => {
+test('Logadapter with error', async (done) => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
