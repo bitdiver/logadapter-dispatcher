@@ -1,16 +1,15 @@
 import { LogAdapterDispatcher, getLogAdapterDispatcher } from '../src/index'
 
-test('create a new LogAdapterDispatcher', async (done) => {
+test('create a new LogAdapterDispatcher', async () => {
   const logAdapter = getLogAdapterDispatcher()
   expect(logAdapter).not.toBeNull()
   logAdapter.reset()
-  done()
 })
 
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter set loglevel', async (done) => {
+test('Logadapter set loglevel', async () => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -30,14 +29,12 @@ test('Logadapter set loglevel', async (done) => {
   expect(logAdapter.levelNumber).toEqual(1)
   expect(logger1.level).toEqual(1)
   expect(logger2.level).toEqual(1)
-
-  done()
 })
 
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter reset', async (done) => {
+test('Logadapter reset', async () => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -50,14 +47,12 @@ test('Logadapter reset', async (done) => {
 
   expect(logger1.messages).toEqual([])
   expect(logger2.messages).toEqual([])
-
-  done()
 })
 
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter reset', async (done) => {
+test('Logadapter reset', async () => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -69,14 +64,12 @@ test('Logadapter reset', async (done) => {
 
   expect(logger1.messages).toEqual(['a', 'b'])
   expect(logger2.messages).toEqual(['a', 'b'])
-
-  done()
 })
 
 /*
  * Test that the reset will be executed for all the logger
  */
-test('Logadapter with error', async (done) => {
+test('Logadapter with error', async () => {
   const logger1 = new DemoAdapter({ name: 'logger1' })
   const logger2 = new DemoAdapter({ name: 'logger2' })
   const logAdapter = new LogAdapterDispatcher({
@@ -89,8 +82,6 @@ test('Logadapter with error', async (done) => {
 
   expect(logger1.messages).toEqual(['a', 'b'])
   expect(logger2.messages).toEqual(['a', 'b'])
-
-  done()
 })
 
 class DemoAdapter {
